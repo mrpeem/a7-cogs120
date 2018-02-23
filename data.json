@@ -321,8 +321,32 @@
     "URL": "/music/1.ogg",
     "extraInfo": []
 
+  },
+  {
+    "id": 23,
+    "category": "garden",
+    "itemTitle": "garden 1",
+    "type": "image",
+    "date": "February 6",
+    "caption": "Flower Garden",
+    "summary": "Beautiful flower Garden",
+    "keyword": "Garden",
+    "URL": "/images/garden/1.jpeg",
+    "extraInfo": []
+     
+   },
+   {
+   "id": 24,
+    "category": "Home",
+    "itemTitle": "Home Decor",
+    "type": "image",
+    "date": "February 6",
+    "caption": "Minimalist Design",
+    "summary": "All white",
+    "keyword": "Home",
+    "URL": "/images/home/1.jpeg",
+    "extraInfo": []
+        
+    },
   }
-
-
-
 ]
