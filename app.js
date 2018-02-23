@@ -55,7 +55,17 @@ app.get('/profile_login', profile.login);
 //app.get('/profile_incorrect_login', profile.incorrect_login);
 app.get('/profile_logout', profile.logout);
 
-
+//app.get('/profile_goodle', profile.google);
+app.get('/sharedChat/:userIdNumber/:categoryTitle/:itemId/show', userInfo.shareView);
+app.get('/userData/:userIdNumber/:categoryTitle/:itemId/setShare', userInfo.view);
+app.get('/userData/:userIdNumber/:categoryTitle/:itemId/unsetShare', userInfo.view2);
+app.get('/userData/:userIdNumber/:categoryTitle/:itemId/unsetShareInfo', userInfo.exitShareInfo);
+app.get('/userData/:userIdNumber/:categoryTitle/:itemId/setChat', userInfo.enterChatRoom);
+app.get('/userData/:userIdNumber/:categoryTitle/:itemId/setChatInfo', userInfo.enterChatRoomInfo);
+app.get('/userData/:userIdNumber/:categoryTitle/:itemId/setChatShare', userInfo.enterChatRoomShare);
+app.get('/userData/:userIdNumber/:categoryTitle/:itemId/unsetChat', userInfo.exitChatRoom);
+app.get('/userData/:userIdNumber/:categoryTitle/:itemId/unsetChatInfo', userInfo.exitChatRoomInfo);
+app.get('/userData/:userIdNumber/:categoryTitle/:itemId/unsetChatShare', userInfo.exitChatRoomShare);
 // Example route
 // app.get('/users', user.list);
 
