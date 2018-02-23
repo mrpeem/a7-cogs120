@@ -1,119 +1,64 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-	<title>APP</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
-	<link href="/css/preference.css" rel="stylesheet">
-	<link href="/css/profile.css" rel="stylesheet">
+{{>header}}
+<link href="/css/play.css" rel="stylesheet">
+<link href="/css/preference.css" rel="stylesheet">
 </head>
 
 <body>
 
-	<div class="page-container">
+  {{>searchbar}}
 
-		<div class="categories-container">
-			<div class="preference-container">
+  <div class="page-container">
 
-        		<div class="page-back">
-          			<a href="/"> &lt; Back  </a>
-        		</div>
+    <div class="pageTitle-container">
+      <div class="page-back">
 
-        	    <a href="/">
-				<div class="preference-confirm" align="right">
-						Confirm
-				</div>
-				</a>
-				<div class="preference-Title">
-					<h3>Select your prefered categories.</h3>
-				</div>
-				<a href="/">
-				<div class="content-skip">
-					<p align="right">skip this step</p>
-				</div>
-				</a>
-			    
-			    <div class="preference-Search">
-				    <div class="search-50" align="right">
-						<img src="/images/icons/search-50.png" alt="search button"><span> Search</span>
-				    </div>
-				</div>
+      </div>
+      <div class="page-title">
+        Preference
 
-			</div>
-		    <div class="categories-button">
+      </div>
 
-				{{#each allcategories}}
-				        <form> 
-				        	<input type ="checkbox" id="{{id}}" name="{{id}}" value="{{title}}">
-				        	<label for = "{{id}}">{{title}}</label>
 
-				        </form>
-						  						
-				{{/each}}
-			</div>
-
-		</div>
-    <div class="nav-cover">
+      <div class="page-filter">
+        <a href="/profile">Skip</a>
+      </div>
+    </div>
+    <div class="nav-up-cover">
 
     </div>
+    <div class="preference-Title">
+      <div>Select your prefered categories.</div>
+    </div>
+
+    <div class="preference-Search">
+      <div class="search-50" align="right">
+        <img src="/images/icons/search-50.png" alt="search button"><span> Search</span>
+      </div>
+    </div>
+
+    <div class="categories-button">
+
+      {{#each categoryList}}
+        <form>
+          <input type="checkbox" id="{{id}}" name="{{id}}" value="{{title}}">
+          <label for="{{id}}">{{title}}</label>
+
+        </form>
+
+      {{/each}}
+    </div>
+
+  </div>
+
+
+  {{>navigation}}
 
 
 
 
+  </div>
 
-		<div class="nav-container">
-
-			<a href="/">
-				<div class="home nav-divider">
-					<div class="nav-images">
-						<img src="/images/icons/home-100.png" alt="home button">
-					</div>
-					<div class="nav-title">
-						Home
-					</div>
-				</div>
-			</a>
-
-			<a href="/browse">
-				<div class="browse nav-divider">
-					<div class="nav-images">
-						<img src="/images/icons/browse-100.png" alt="browse button">
-					</div>
-					<div class="nav-title">
-						Browse
-					</div>
-				</div>
-			</a>
-			<a href="/">
-				<div class="profile nav-divider">
-					<div class="nav-images">
-						<img src="/images/icons/profile-100.png" alt="profile button">
-					</div>
-					<div class="nav-title">
-						Profile
-					</div>
-
-				</div>
-			</a>
-			<a href="/search">
-				<div class="search">
-					<div class="nav-images">
-						<img src="/images/icons/search-100.png" alt="search button">
-					</div>
-					<div class="nav-title">
-						Search
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
-
-	<script src="/js/jquery-1.11.0.js"></script>
-	<script src="/js/bootstrap.js"></script>
+  {{>script}}
 
 </body>
 

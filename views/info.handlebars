@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+{{>header}}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APP</title>
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="/css/materialize.css" media="screen,projection" />
-  <link rel="stylesheet" href="/css/info.css">
-  <link href="/css/profile.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/info.css">
+<link href="/css/profile.css" rel="stylesheet">
 </head>
-
+{{>searchbar}}
 <body>
   <div class="page-container">
     <div class="pageTitle-container">
 
       <div class="page-back">
-        <a href="/play/{{categoryTitle}}"> &lt; Back  </a>
+        {{#if isOneItem}}
+        <a href="/{{categoryTitle}}/{{itemId}}/showOneItem"> &lt; Back  </a>
+        {{else}}
+        <a href="/{{categoryTitle}}/{{itemId}}/show"> &lt; Back  </a>
+        {{/if}}
       </div>
 
       <div class="page-title">
@@ -24,126 +21,36 @@
       </div>
 
       <div class="page-filter">
-        Save
+          <div class="topNav-save-btn">
+            Save
+          </div>
       </div>
 
     </div>
     <div id="desc" class="page-subtitle">
       Title
     </div>
-    <div class="page-box page-box-padding">
-      {{itemId}}
+    <div class="page-box page-box-padding basic-padding">
+      {{itemTitle}}
     </div>
 
     <div class="page-subtitle">
       Description
     </div>
 
-    <div class="page-box page-box-padding">
+    <div class="page-box page-box-padding basic-padding">
       {{description}}
     </div>
 
+    {{#each extra}}
     <div class="page-subtitle">
-      Location
+      {{title}}
     </div>
-
-    <div class="page-box location">
-      <div id="location-addr">
-        8564 El Paseo Grande, La Jolla, CA 92037
-      </div>
-      <div id="location-btn">
-        Get Direction &gt;
-      </div>
-      <div id="location-map">
-        <img src="/images/info/map.png" alt="">
-      </div>
-    </div>
-
-    <div class="page-subtitle">
-      Beaches Near You
-    </div>
-
-    <div class="page-box box-btn page-box-padding weather">
-      <a class="box-a" href="/play/{{categoryTitle}}/{{itemId}}/info/LaJollaShores">
-        <div class="box-title">
-          <span class="box-data">La Jolla Shores</span> <span class="next">&gt;</span>
-        </div>
-      </a>
-      <div class="weather-temp">
-        <span id="temp-data">61</span> <span clsss="temp-options"><span id="temp-f">&deg;F</span><span class="temp-div">|</span> <span id="temp-c">&deg;C</span></span>
-      </div>
-      <div class="weather-icon">
-        <img src="/images/icons/cloudy-day-2.svg" alt="" width="50rem;">
-      </div>
-    </div>
-
-    <div class="page-box box-btn page-box-padding weather">
-      <a class="box-a" href="/play/{{categoryTitle}}/{{itemId}}/info/BlacksBeach">
-        <div class="box-title">
-          <span class="box-data">Black's Beach</span> <span class="next">&gt;</span>
-        </div>
-      </a>
-
-      <div class="weather-temp">
-        <span id="temp-data2">63</span> <span clsss="temp-options"><span id="temp-f2">&deg;F</span> <span class="temp-div">|</span> <span id="temp-c2">&deg;C</span></span>
-      </div>
-      <div class="weather-icon">
-        <img src="/images/icons/cloudy-day-1.svg" alt="" width="50rem;">
-      </div>
-    </div>
-
-    <div class="page-box box-btn page-box-padding weather box-last">
-      <a class="box-a" href="/play/{{categoryTitle}}/{{itemId}}/info/ShellBeach">
-        <div class="box-title">
-
-          <span class="box-data">Shell Beach</span> <span class="next">&gt;</span>
-        </div>
-      </a>
-      <div class="weather-temp">
-        <span id="temp-data3">53</span> <span clsss="temp-options"><span id="temp-f3">&deg;F</span> <span class="temp-div">|</span> <span id="temp-c3">&deg;C</span></span>
-      </div>
-      <div class="weather-icon">
-        <img src="/images/icons/rainy-1.svg" alt="" width="50rem;">
-      </div>
-    </div>
-
-    <div class="page-subtitle">
-      SurfBoard Rentals
-    </div>
-
-    <div class="page-box box-btn page-box-padding shop">
-      <a class="box-a" href="/play/{{categoryTitle}}/{{itemId}}/info/SDSurfboardRental">
-        <div class="box-title">
-          <span class="box-data">SD Surfboard Rental</span> <span class="next">&gt;</span>
-        </div>
-      </a>
-      <div class="weather-temp price">
-        <span>&#36;23 / 1 Hour</span>
-      </div>
-    </div>
-
-    <div class="page-box box-btn page-box-padding shop">
-      <a class="box-a" href="/play/{{categoryTitle}}/{{itemId}}/info/PBSurfShop">
-        <div class="box-title">
-          <span class="box-data">PB Surf Shop</span> <span class="next">&gt;</span>
-        </div>
-      </a>
-      <div class="weather-temp price">
-        <span>&#36;15 / 1 Hour</span>
-      </div>
-    </div>
-
-    <div class="page-box box-btn page-box-padding shop box-last">
-      <a class="box-a" href="/play/{{categoryTitle}}/{{itemId}}/info/LaJollaSurfSystems">
-        <div class="box-title">
-          <span class="box-data">La Jolla Surf Systems</span> <span class="next">&gt;</span>
-        </div>
-      </a>
-      <div class="weather-temp price">
-        <span>&#36;50 / All day</span>
-      </div>
-    </div>
-
+        {{{contentHTML}}}
+        {{#each container}}
+          {{{mediaHTML}}}
+        {{/each}}
+   {{/each}}
 
 
     <div class="nav-cover">
@@ -152,69 +59,79 @@
     <!-- SPACE FOR POPUP -->
     <div id="profile_popup" class="modal"> </div>
 
+    <div class="nav-share-2 chatroom-btns-layout">
+      {{#if isScreenShared}}
+        {{#unless isAtChatroom}}
+          <div class="group-chat-container">
+
+            <a>
+              <div>
+
+              </div>
+            </a>
+            <a href="/userData/{{userIdNumber}}/{{categoryTitle}}/{{itemId}}/setChatInfo">
+              <div id="enterChatRoom" class="">
+                <img src="/images/icons/chat50.png" alt=""><div class="centered">
+                  Chat
+                </div>
+              </div>
+            </a>
+
+          </div>
+        {{/unless}}
+      {{/if}}
+
+    </div>
 
     <!-- BOTTOM NAVIGATION BAR -->
-    <div class="nav-container">
+    {{#unless isAtChatroom}}
+      {{>navigation}}
+    {{/unless}}
 
-      <!-- Home -->
-      <a href="/">
-        <div class="home nav-divider">
-          <div class="nav-images">
-            <img src="/images/icons/home-100.png" alt="home button">
-          </div>
-          <div class="nav-title">
-            Home
+    {{#if isAtChatroom}}
+      <div class="chat-box-container">
+        <div class="chat-box-btns">
+          <a href="/userData/{{userIdNumber}}/{{categoryTitle}}/{{itemId}}/unsetChatInfo">
+            <div id="exit-chat" class="exit">
+              Exit
+            </div>
+          </a>
+          <div id="up-btn" class="up">
+            <img id="up-icon" src="/images/icons/up.svg" alt="">
           </div>
         </div>
-      </a>
+        <div class="chat-box-message-window">
 
-      <!-- Browse -->
-      <a href="/browse">
-        <div class="browse nav-divider">
-          <div class="nav-images">
-            <img src="/images/icons/browse-100.png" alt="browse button">
-          </div>
-          <div class="nav-title">
-            Browse
+          <div id="conversation" class="message-window">
+
+
+
           </div>
         </div>
-      </a>
 
-      <!-- Profile -->
-        <a class="profile" onclick="checkLoginStatus( {{currentUser.loginStatus}} )" >
-          <div class="profile nav-divider">
-          <div class="nav-images">
-            <img src="/images/icons/profile-100.png" alt="profile button">
-          </div>
-          <div class="nav-title">
-            Profile
-          </div>
+        <div class="chat-box-message-input">
+          <input id="chat-input" type="text" name="" value="" placeholder="Message Here">
+          <input type="button" id="datasend" name="" value="SEND">
         </div>
-      </a>
+      </div>
 
-      <!-- Search -->
-      <a href="/search">
-        <div class="search">
-          <div class="nav-images">
-            <img src="/images/icons/search-100.png" alt="search button">
-          </div>
-          <div class="nav-title">
-            Search
-          </div>
-        </div>
-      </a>
-    </div>
+    {{/if}}
 
 
 
   </div>
+  <div class="notification-hidden">
 
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/js/materialize.min.js"></script>
-  <script src="/js/info.js"></script>
-  <script src="/js/jquery-1.11.0.js"></script>
-  <script src="/js/bootstrap.js"></script>
-  <script src="/js/profile.js"></script>
+    <div class="save-popup">
+      <img id="check-icon" src="/images/icons/check-500.png" alt=""> Added to Your Profile
+    </div>
+  </div>
+
+    {{>script}}
+    {{>chatScript}}
+    <script src="/js/info.js">
+
+    </script>
 
 </body>
 
