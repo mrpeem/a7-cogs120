@@ -10,6 +10,8 @@ var data = require('../data.json');
 
 var totalNumberOfItems = data.length;
 
+//set current page = home
+userData.currentPageViewed = "home";
 
 //check current User status
 
