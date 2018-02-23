@@ -1,90 +1,39 @@
-//database
+//variables
+var data = require('../data.json');
+var loginStatus = data.currentUser.loginStatus;
+var currentPageViewed = data.currentUser.currentPageViewed;
 var userData = require('../userData.json');
 var popularCategoryList = require('../popularCategoryListData.json');
 var categoryList = require('../categoryListData.json');
 var dataType = require('../dataType.json');
 var data = require('../data.json');
-//variables
-var loginStatus = userData.loginStatus;
-var totalNumberOfItems = data.length;
 
-//set current page = home
-userData.currentPageViewed = "home";
-var randomNumber = Math.floor(Math.random() * totalNumberOfItems);
+//check current User status
 
-var todayItem = data[randomNumber];
-var mediaHTML = '';
-var todayType = todayItem.type;
-var todayCategoryTitle = todayItem.category;
-var todayItemId = todayItem.id;
+//for new user
+//shows Popular Categories
+if (loginStatus === false){
+	console.log('New User is incoming');
 
-console.log('todayType:' + todayType);
-
-switch (todayType) {
-  case 'image':
-    console.log('image Type');
-    mediaHTML = '<img id="media" src="' + todayItem.URL + '" alt="">';
-    break;
-  case 'video':
-    console.log('video Type');
-    mediaHTML = '<video style="width:100%;" controls><source src=' + todayItem.URL + ' type=video/mp4></video>';
-    break;
-
-  case 'literature':
-    mediaHTML = '<img id="media" src="' + todayItem.URL + '" alt="">';
-    break;
-
-  default:
-    console.log('check mediaType!');
-    break;
-}
-
-//check a user is logged in or not
-if (loginStatus) {
-  //a returning user
-  console.log('you are logged in already');
-  //favorite categotyList should be shown
-  var favoriteList = userData.favoriteList;
-  console.log(favoriteList);
-  //update currentCategorySelected to print "Favorite" text
-  userData.currentCategorySelected = "Favorite";
-  // copy 4 most favorite categories
-  // from favoriteList to userList in userData.json
-  userData.userList = [];
-  for (var i = 0; i < 4; i++) {
-    userData.userList.push(favoriteList[i]);
-  }
-} else {
-  //a new user
-  console.log('you are not logged in yet');
-  //popular categoryList should be shown
-
-  //update currentCategorySelected to print "Popular" text
-  userData.currentCategorySelected = "Popular";
-
-  // copy 4 most popular categories
-  // from popularCategoryList to userList in userData.json
-  userData.userList = [];
-  for (var i = 0; i < 4; i++) {
-    userData.userList.push(popularCategoryList[i]);
-  }
+		var popular = data.categories[1]['popular'];
+		data.currentUsercategoryList.push(popular);
+		data.currentUser.currentCategorySelected ="Popular";
 
 }
-var userList = userData.userList;
+//shows Favorite Categories
+else {
+	console.log('Returning User is incoming');
 
+		var favorite = data.categories[2]['favorite'];
+		data.currentUsercategoryList.push(favorite);
+		data.currentUser.currentCategorySelected ="Favorite";
+}
 
-exports.view = function(req, res) {
-  userData.currentItemIndex = 0;
-  console.log(userList);
-  res.render('index', {
-    'currentCategorySelected': userData.currentCategorySelected,
-    'currentUserCategoryList': userList,
-    'loginStatus': userData.loginStatus,
-    'dataTypeList': dataType,
-    'mediaHTML': mediaHTML,
-    'categoryTitle': todayCategoryTitle,
-    'itemId': todayItemId,
-     categoryList : categoryList,
-     userData : userData
-  });
+//update current user's location
+if(currentPageViewed === null){
+	data.currentUser.currentPageViewed = "Home";
+}
+
+exports.view = function(req, res){
+	res.render('index', data);
 };
