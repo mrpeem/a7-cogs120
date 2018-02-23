@@ -66,6 +66,23 @@ app.get('/userData/:userIdNumber/:categoryTitle/:itemId/setChatShare', userInfo.
 app.get('/userData/:userIdNumber/:categoryTitle/:itemId/unsetChat', userInfo.exitChatRoom);
 app.get('/userData/:userIdNumber/:categoryTitle/:itemId/unsetChatInfo', userInfo.exitChatRoomInfo);
 app.get('/userData/:userIdNumber/:categoryTitle/:itemId/unsetChatShare', userInfo.exitChatRoomShare);
+app.get('/sharedlink/:itemId/show', share.linkview);
+app.get('/sharedlink/:itemId/show/info', share.infoview);
+app.get('/sharedlink/:itemId/show/share', share.shareview);
+app.get('/app/:categoryTitle', dataSelector.view);
+app.get('/:categoryTitle/right', right.view);
+app.get('/:categoryTitle/left', left.view);
+app.get('/:categoryTitle/:itemId/info', info.view);
+app.get('/:categoryTitle/:itemId/infoOne', info.viewOne);
+app.get('/:categoryTitle/:itemId/share', share.view);
+app.get('/:categoryTitle/:itemId/shareOne', share.viewOne);
+app.get('/:categoryTitle/:itemId/show', show.view);
+app.get('/:categoryTitle/:itemId/showOneItem', show.viewOneItem);
+app.get('/:categoryTitle/:itemId/info/:externalId/external', external.view);
+app.get('/preference', preference.view);
+app.get('/app/:title/filteredRandom', filteredrRandom.view);
+//app.get('/:categoryTitle/:itemId/info/:externalId/external/:webaddress', external.webview);
+
 // Example route
 // app.get('/users', user.list);
 
