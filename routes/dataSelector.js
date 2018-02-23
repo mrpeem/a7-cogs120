@@ -138,6 +138,6 @@ exports.view = function(req, res){
     'userIdNumber': userData.userIdNumber,
     'isAtChatroom': userData.isAtChatroom,
     categoryList : categoryList,
-    'loginStatus': userData.loginStatus
+    'loginStatus': userData.loginStatus, 
   });
 };

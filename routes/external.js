@@ -33,6 +33,6 @@ exports.view = function(req, res) {
     'itemId': itemId,
     'URL': data[itemId].extraInfo[containerIndex].container[externalId].webURL,
     categoryList : categoryList,
-    'loginStatus': userData.loginStatus
+    'loginStatus': userData.loginStatus,
   });
 };
