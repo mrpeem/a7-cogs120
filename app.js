@@ -22,10 +22,9 @@ var preference = require('./routes/preference');
 var filteredrRandom = require('./routes/filteredRandom');
 
 var profile = require('./routes/profile');
-
-// var user = require('./routes/user');
-
 var app = express();
+var server = http.createServer(app);
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -58,7 +57,7 @@ app.get('/profile_register', profile.register);
 // Example route
 // app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
+server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
