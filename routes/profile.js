@@ -41,8 +41,8 @@ exports.register = function(req, res) {
   //userData.userList.push(newUser);
   console.log("login status: " + userData.loginStatus);
   res.render('preference', {
-    userData,
-    categoryList
+    userData : userData,
+    categoryList : categoryList
   });
 };
 
