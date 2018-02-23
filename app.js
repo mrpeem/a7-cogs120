@@ -9,17 +9,13 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
-var dataSelector = require('./routes/dataSelector');
+var info = require('./routes/info');
+var browse = require('./routes/browse');
 var right = require('./routes/right');
 var left = require('./routes/left');
-var info = require('./routes/info');
 var share = require('./routes/share');
-var show = require('./routes/show');
-var external = require('./routes/external');
-var userInfo = require('./routes/userInfo');
-var browse = require('./routes/browse');
 var preference = require('./routes/preference');
-var filteredrRandom = require('./routes/filteredRandom');
+var profile = require('./routes/profile');
 
 // var user = require('./routes/user');
 
