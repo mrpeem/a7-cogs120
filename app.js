@@ -17,10 +17,11 @@ var share = require('./routes/share');
 var show = require('./routes/show');
 var external = require('./routes/external');
 var userInfo = require('./routes/userInfo');
-
-var preference = require('./routes/preference');
-var profile = require('./routes/profile');
 var browse = require('./routes/browse');
+var preference = require('./routes/preference');
+var filteredrRandom = require('./routes/filteredRandom');
+
+var profile = require('./routes/profile');
 
 // var user = require('./routes/user');
 
