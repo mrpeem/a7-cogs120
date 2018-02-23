@@ -10,15 +10,6 @@ var data = require('../data.json');
 
 var totalNumberOfItems = data.length;
 
-//set current page = home
-userData.currentPageViewed = "home";
-var randomNumber = Math.floor(Math.random() * totalNumberOfItems);
-
-var todayItem = data[randomNumber];
-var mediaHTML = '';
-var todayType = todayItem.type;
-var todayCategoryTitle = todayItem.category;
-var todayItemId = todayItem.id;
 
 //check current User status
 
