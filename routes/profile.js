@@ -109,7 +109,40 @@ function resetUserData(userIdNumber) {
   userData.loginStatus = false;
 
   //replace userData w/ default data
-  userData = wholeUserData[0];
+  userData = {
+  "loginStatus": false,
+  "userRole":null,
+  "userIdNumber": 0,
+  "userName": null,
+  "actualName": null,
+  "profileImgURL": "/images/icons/default_profile.jpg",
+  "currentPageViewed": null,
+  "currentCategorySelected": null,
+  "currentItemIndex": 0,
+  "isScreenShared": false,
+  "isAtChatroom": false,
+  "categoryList": [],
+  "favoriteList": [{
+    "title": "Activities",
+    "id": "activities"
+  }, {
+    "title": "Food",
+    "id": "food"
+  }, {
+    "title": "Travel",
+    "id": "travel"
+  }, {
+    "title": "Movies",
+    "id": "movies"
+  }, {
+    "title": "Pets",
+    "id": "pets"
+  }, {
+    "title": "Home",
+    "id": "home"
+  }],
+  "userList": []
+};
 
   console.log(userData);
 }
@@ -201,13 +234,14 @@ exports.logout = function(req, res) {
   }
 
   var userList = userData.userList;
-  res.render('index', {
+  /*res.render('index', {
     'currentCategorySelected': userData.currentCategorySelected,
     'currentUserCategoryList': userList,
     'loginStatus': userData.loginStatus,
     categoryList,
     userData,
     'dataTypeList': dataTypeList
-  });
+  });*/
+  res.render('profile', userData);
 
 };
