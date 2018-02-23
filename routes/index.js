@@ -16,7 +16,6 @@ var randomNumber = Math.floor(Math.random() * totalNumberOfItems);
 
 var todayItem = data2[randomNumber];
 var mediaHTML = '';
-var todayType = todayItem.type;
 
 //check current User status
 
