@@ -1,0 +1,162 @@
+{
+  "currentUser": {
+    "loginStatus": false,
+    "userName": null,
+    "currentPageViewed": null,
+    "currentCategorySelected": null,
+    "currentItemIndex": 0,
+    "isScreenShared": false
+  },
+  "currentUsercategoryList": [],
+  "allCategoryList": [],
+  "activityList": [{
+      "id": 1,
+      "itemTitle": "Surf",
+      "type": "image",
+      "date": "February 6",
+      "caption": "Jacksonville Beach",
+      "summary": "",
+      "URL": "/images/play/activities/1.jpeg"
+    },
+    {
+      "id": 2,
+      "itemTitle": "Surreal journey ",
+      "type": "image",
+      "date": "February 6",
+      "caption": "Papua New Guinea",
+      "summary": "",
+      "URL": "/images/play/activities/2.jpeg"
+
+    },
+    {
+      "id": 3,
+      "date": "February 6",
+      "itemTitle": "Shane Dorian",
+      "caption": "An Unmakeable wave for most",
+      "summary": "",
+      "URL": "/images/play/activities/3.jpeg"
+    }
+
+  ],
+  "categories": [{
+      "all": [{
+          "title": "Activities",
+          "id": "activities"
+        },
+        {
+          "title": "Art",
+          "id": "art"
+        },
+        {
+          "title": "Audio",
+          "id": "audio"
+        },
+        {
+          "title": "Beauty",
+          "id": "beauty"
+        },
+        {
+          "title": "Games",
+          "id": "games"
+        },
+        {
+          "title": "Garden",
+          "id": "garden"
+        },
+        {
+          "title": "Food",
+          "id": "food"
+        },
+        {
+          "title": "Home",
+          "id": "home"
+        },
+        {
+          "title": "Kid",
+          "id": "kid"
+        },
+        {
+          "title": "Movies",
+          "id": "movies"
+        },
+        {
+          "title": "Music",
+          "id": "music"
+        },
+        {
+          "title": "Pets",
+          "id": "pets"
+        },
+        {
+          "title": "Sports",
+          "id": "sports"
+        },
+        {
+          "title": "Toys",
+          "id": "toys"
+        },
+        {
+          "title": "Travel",
+          "id": "travel"
+        }
+
+      ]
+    },
+    {
+      "popular": [{
+          "title": "Activities",
+          "id": "activities"
+        },
+        {
+          "title": "Games",
+          "id": "games"
+        },
+        {
+          "title": "Music",
+          "id": "music"
+        },
+        {
+          "title": "Travel",
+          "id": "travel"
+        }
+      ]
+    },
+    {
+      "favorite": [{
+          "title": "Activities",
+          "id": "activities"
+        },
+        {
+          "title": "Games",
+          "id": "games"
+        },
+        {
+          "title": "Music",
+          "id": "music"
+        },
+        {
+          "title": "Movies",
+          "id": "movies"
+        }
+      ]
+    }
+
+
+  ],
+  "userList":[
+    {
+      "name":"default_name",
+      "email":"default_email@ucsd.edu",
+      "password":"default_password"
+    }
+
+  ]
+
+
+
+
+
+
+
+
+}

@@ -1,4 +1,4 @@
-var data = require('../data2.json');
+var data = require('../data.json');
 var userData = require('../userData.json');
 var categoryList = require('../categoryListData.json');
 var wholeUserData = require('../wholeUserData.json');
