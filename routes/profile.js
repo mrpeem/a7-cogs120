@@ -178,7 +178,7 @@ exports.login = function(req, res) {
     }
 
     console.log("Wrong username or password");
-    res.render('profile_incorrect_login');
+    //res.render('profile_incorrect_login');
 
   }
 }
