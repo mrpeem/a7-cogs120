@@ -3,7 +3,7 @@ var userData = require('../userData.json');
 var popularCategoryList = require('../popularCategoryListData.json');
 var categoryList = require('../categoryListData.json');
 var dataType = require('../dataType.json');
-var data = require('../data.json');
+var data = require('../data2.json');
 //variables
 var loginStatus = userData.loginStatus;
 var totalNumberOfItems = data.length;
