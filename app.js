@@ -9,7 +9,7 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
-var dataSelector = require('./routes/dataSelector'); 
+var dataSelector = require('./routes/dataSelector');
 var right = require('./routes/right');
 var left = require('./routes/left');
 var info = require('./routes/info');
@@ -20,13 +20,12 @@ var userInfo = require('./routes/userInfo');
 var browse = require('./routes/browse');
 var preference = require('./routes/preference');
 var filteredrRandom = require('./routes/filteredRandom');
-
-
+// Example route
+// var user = require('./routes/user');
 var profile = require('./routes/profile');
 var app = express();
 var server = http.createServer(app);
 var io = require('socket.io')(server);
-
 
 
 // all environments
@@ -85,10 +84,67 @@ app.get('/preference', preference.view);
 app.get('/app/:title/filteredRandom', filteredrRandom.view);
 //app.get('/:categoryTitle/:itemId/info/:externalId/external/:webaddress', external.webview);
 
+
 // Example route
 // app.get('/users', user.list);
 
 server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+/*
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
 
+*/
+
+var usernames = {};
+var rooms = ['room1', 'room2', 'room3'];
+
+io.sockets.on('connection', function(socket){
+  console.log('a user connected');
+
+  socket.on('addUser', function(username){
+    socket.username = username;
+    console.log(username + "has logged in");
+    socket.room = rooms[0];
+    usernames[username] = socket.username;
+    socket.join(socket.room);
+    updateClient(socket, username, socket.room);
+    updateChatRoom(socket, 'connected');
+    updateRoomList(socket, socket.room);
+
+  });
+
+
+  //send message
+  socket.on('sendChat', function(data){
+    console.log(socket.username + "sent a message");
+    io.sockets.in(socket.room).emit('updateChat', socket.username, data);
+  });
+
+  socket.on('disconnect', function(){
+    delete usernames[socket.username];
+    io.sockets.emit('updateUsers', usernames);
+
+    updateGlobal(socket, 'disconnected');
+    socket.leave(socket.room);
+  });
+
+});
+
+
+function updateClient(socket, username, newRoom){
+  socket.emit('updateChat', 'SERVER ', ' You\'ve connected to ' + newRoom);
+}
+function updateChatRoom(socket, message){
+  socket.broadcast.to(socket.room).emit('updateChat', 'SERVER ', socket.username + ' has '  + message);
+}
+
+function updateGlobal(socket, message){
+  socket.broadcast.emit('updateChat', 'SERVER ', socket.username + 'have ' + message);
+}
+
+function updateRoomList(socket, currentRoom) {
+  socket.emit('updateRooms', rooms, currentRoom);
+}
