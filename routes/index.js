@@ -14,6 +14,8 @@ var totalNumberOfItems = data.length;
 userData.currentPageViewed = "home";
 var randomNumber = Math.floor(Math.random() * totalNumberOfItems);
 
+var todayItem = data[randomNumber];
+var mediaHTML = '';
 
 //check current User status
 
