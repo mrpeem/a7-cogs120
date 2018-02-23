@@ -323,7 +323,7 @@
 
   },
   {
-    "id": 23,
+    "id": 21,
     "category": "garden",
     "itemTitle": "garden 1",
     "type": "image",
@@ -336,7 +336,7 @@
      
    },
    {
-   "id": 24,
+   "id": 22,
     "category": "Home",
     "itemTitle": "Home Decor",
     "type": "image",
@@ -347,6 +347,5 @@
     "URL": "/images/home/1.jpeg",
     "extraInfo": []
         
-    },
-  }
+    }
 ]
