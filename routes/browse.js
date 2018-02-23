@@ -1,15 +1,23 @@
-//variables
-var data = require('../data.json');
-var allCategories = data.categories[0]['all'];
-data.currentUser.currentPageViewed = "Browse";
-data.allCategoryList.push(allCategories);
+//database
 var userData = require('../userData.json');
-var categoryList = require('../categoryListData.json');
 var popularCategoryList = require('../popularCategoryListData.json');
+var categoryList = require('../categoryListData.json');
+var loginStatus = userData.loginStatus;
+
+
+//set current page = home
+userData.currentPageViewed = "home";
 
 
 
-exports.view = function(req, res){
+var userList = userData.userList;
 
-	res.render('browse', userData);
+exports.view = function(req, res) {
+  userData.currentItemIndex = 0;
+  res.render('browse', {
+    categoryList : categoryList, 
+    'currentCategorySelected': userData.currentCategorySelected,
+    'currentUserCategoryList': userList,
+    'loginStatus': userData.loginStatus,
+  });
 };
