@@ -80,11 +80,11 @@ exports.view = function(req, res) {
     'currentCategorySelected': userData.currentCategorySelected,
     'currentUserCategoryList': userList,
     'loginStatus': userData.loginStatus,
-    categoryList,
-    userData,
     'dataTypeList': dataType,
     'mediaHTML': mediaHTML,
     'categoryTitle': todayCategoryTitle,
-    'itemId': todayItemId
+    'itemId': todayItemId,
+     categoryList,
+     userData
   });
 };
