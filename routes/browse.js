@@ -1,9 +1,8 @@
-//variables
-var data = require('../data.json');
-var allCategories = data.categories[0]['all'];
-data.currentUser.currentPageViewed = "Browse";
-data.allCategoryList.push(allCategories);
-
+//database
+var userData = require('../userData.json');
+var popularCategoryList = require('../popularCategoryListData.json');
+var categoryList = require('../categoryListData.json');
+var loginStatus = userData.loginStatus;
 
 exports.view = function(req, res){
 
