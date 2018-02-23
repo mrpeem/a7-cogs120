@@ -154,7 +154,7 @@ exports.login = function(req, res) {
     res.render('profile', userData);
   }
 
-  //manual login
+  /*manual login
   else {
     console.log("manual login");
 
@@ -176,12 +176,12 @@ exports.login = function(req, res) {
     console.log("Wrong username or password");
     res.render('profile_incorrect_login');
 
-  }
+  } */
 }
 
-exports.incorrect_login = function(req, res) {
+/*exports.incorrect_login = function(req, res) {
   res.render('profile_incorrect_login');
-}
+}*/
 
 
 
