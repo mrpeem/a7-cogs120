@@ -7,7 +7,7 @@ console.log("preference.js");
 exports.view = function(req, res){
 	res.render('preference', {
   "categoryList": categoryList,
-  'loginStatus': userData.loginStatus,});
+  'loginStatus': userData.loginStatus});
   console.log(categoryList);
   console.log(data);
 };

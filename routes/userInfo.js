@@ -74,9 +74,9 @@ exports.view = function(req, res) {
     'itemID': categoryListUser[index - 1].id,
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,
-    categoryList : categoryList, 
+    categoryList,
     'loginStatus': userData.loginStatus,
-    needLogin : needLogin
+    needLogin
   });
 };
 
@@ -136,7 +136,7 @@ exports.view2 = function(req, res) {
     'itemID': categoryListUser[index - 1].id,
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,
-    categoryList : categoryList,
+    categoryList,
     'loginStatus': userData.loginStatus
   });
 };
@@ -199,7 +199,7 @@ exports.enterChatRoom = function(req, res) {
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,
     'isAtChatroom': userData.isAtChatroom,
-    categoryList : categoryList,
+    categoryList,
     'loginStatus': userData.loginStatus
   });
 };
@@ -263,7 +263,7 @@ exports.exitChatRoom = function(req, res) {
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,
     'isAtChatroom': userData.isAtChatroom,
-    categoryList : categoryList, 
+    categoryList,
     'loginStatus': userData.loginStatus
 
   });
@@ -513,8 +513,8 @@ exports.shareView = function(req, res) {
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,
     'isAtChatroom': userData.isAtChatroom,
-    categoryList : categoryList, 
-    'loginStatus': userData.loginStatus, 
+    categoryList,
+    'loginStatus': userData.loginStatus
   });
 };
 
@@ -567,7 +567,7 @@ exports.enterChatRoomShare = function(req, res) {
     'mediaHTML': mediaHTML,
     'itemIdTotal': itemId,
     'userIdNumber': userIdNumber,
-    categoryList: categoryList,
+    categoryList,
     'loginStatus': userData.loginStatus,
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,
@@ -629,7 +629,7 @@ exports.exitChatRoomShare = function(req, res) {
     'mediaHTML': mediaHTML,
     'itemIdTotal': itemId,
     'userIdNumber': userIdNumber,
-    categoryList : categoryList, 
+    categoryList,
     'loginStatus': userData.loginStatus,
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,

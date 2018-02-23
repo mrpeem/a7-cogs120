@@ -15,7 +15,7 @@ var userList = userData.userList;
 exports.view = function(req, res) {
   userData.currentItemIndex = 0;
   res.render('browse', {
-    categoryList : categoryList, 
+    categoryList,
     'currentCategorySelected': userData.currentCategorySelected,
     'currentUserCategoryList': userList,
     'loginStatus': userData.loginStatus,

@@ -56,8 +56,8 @@ exports.view = function(req, res) {
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,
     'isAtChatroom': userData.isAtChatroom,
-    categoryList : categoryList,
-    'loginStatus': userData.loginStatus,
+    categoryList,
+    'loginStatus': userData.loginStatus
 
   });
 };
@@ -117,9 +117,9 @@ exports.viewOne = function(req, res) {
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,
     'isAtChatroom': userData.isAtChatroom,
-    categoryList : categoryList,
+    categoryList,
     'loginStatus': userData.loginStatus,
-    isOneItem : isOneItem
+    isOneItem
 
   });
 };

@@ -53,7 +53,7 @@ app.get('/browse', browse.view);
 app.get('/profile', profile.view);
 app.get('/profile_register', profile.register);
 app.get('/profile_login', profile.login);
-//app.get('/profile_incorrect_login', profile.incorrect_login);
+app.get('/profile_incorrect_login', profile.incorrect_login);
 app.get('/profile_logout', profile.logout);
 
 //app.get('/profile_goodle', profile.google);

@@ -41,8 +41,8 @@ exports.register = function(req, res) {
   //userData.userList.push(newUser);
   console.log("login status: " + userData.loginStatus);
   res.render('preference', {
-    userData : userData,
-    categoryList : categoryList
+    userData,
+    categoryList
   });
 };
 
@@ -51,6 +51,8 @@ exports.register = function(req, res) {
 //helper function to create new users
 function createNewUser(id, userName, password, email, img, actualName) {
   var newUser = {
+    "loginStatus": false,
+    "userRole":null,
     "userIdNumber": id,
     "userName": userName,
     "password": password,
@@ -59,6 +61,7 @@ function createNewUser(id, userName, password, email, img, actualName) {
     "actualName": actualName,
     "currentItemIndex": 0,
     "isScreenShared": false,
+    "isAtChatroom": false,
     "categoryList": [],
     "favoriteList": [{
       "title": "Activities",
@@ -95,6 +98,7 @@ function populateUserData(userIdNumber) {
   userData.categoryList = wholeUserData[userIdNumber].categoryList;
   userData.favoriteList = wholeUserData[userIdNumber].favoriteList;
   userData.profileImgURL = wholeUserData[userIdNumber].profileImgURL;
+  userData.isAtChatroom =  wholeUserData[userIdNumber].isAtChatroom;
   userData.loginStatus = true;
 }
 
@@ -109,40 +113,7 @@ function resetUserData(userIdNumber) {
   userData.loginStatus = false;
 
   //replace userData w/ default data
-  userData = {
-  "loginStatus": false,
-  "userRole":null,
-  "userIdNumber": 0,
-  "userName": null,
-  "actualName": null,
-  "profileImgURL": "/images/icons/default_profile.jpg",
-  "currentPageViewed": null,
-  "currentCategorySelected": null,
-  "currentItemIndex": 0,
-  "isScreenShared": false,
-  "isAtChatroom": false,
-  "categoryList": [],
-  "favoriteList": [{
-    "title": "Activities",
-    "id": "activities"
-  }, {
-    "title": "Food",
-    "id": "food"
-  }, {
-    "title": "Travel",
-    "id": "travel"
-  }, {
-    "title": "Movies",
-    "id": "movies"
-  }, {
-    "title": "Pets",
-    "id": "pets"
-  }, {
-    "title": "Home",
-    "id": "home"
-  }],
-  "userList": []
-};
+  userData = wholeUserData[0];
 
   console.log(userData);
 }
@@ -187,7 +158,7 @@ exports.login = function(req, res) {
     res.render('profile', userData);
   }
 
-  /*manual login
+  //manual login
   else {
     console.log("manual login");
 
@@ -209,12 +180,12 @@ exports.login = function(req, res) {
     console.log("Wrong username or password");
     res.render('profile_incorrect_login');
 
-  } */
+  }
 }
 
-/*exports.incorrect_login = function(req, res) {
+exports.incorrect_login = function(req, res) {
   res.render('profile_incorrect_login');
-}*/
+}
 
 
 
@@ -234,14 +205,13 @@ exports.logout = function(req, res) {
   }
 
   var userList = userData.userList;
-  /*res.render('index', {
+  res.render('index', {
     'currentCategorySelected': userData.currentCategorySelected,
     'currentUserCategoryList': userList,
     'loginStatus': userData.loginStatus,
     categoryList,
     userData,
     'dataTypeList': dataTypeList
-  });*/
-  res.render('profile', userData);
+  });
 
 };

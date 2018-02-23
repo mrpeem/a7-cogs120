@@ -96,7 +96,7 @@ exports.view = function(req, res) {
     'mediaHTML': mediaHTML,
     'itemIdTotal': itemId,
     'userIdNumber': userIdNumber,
-    categoryList : categoryList, 
+    categoryList,
     'loginStatus': userData.loginStatus,
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,
@@ -196,7 +196,7 @@ exports.shareview = function(req, res) {
   }
 
 
-
+  console.log("userData loginStatus: " +userData.loginStatus );
 
   res.render('linkshare', {
     'categoryTitle': categoryTitle,
@@ -260,12 +260,12 @@ exports.viewOne = function(req, res) {
     'mediaHTML': mediaHTML,
     'itemIdTotal': itemId,
     'userIdNumber': userIdNumber,
-    categoryList : categoryList,
+    categoryList,
     'loginStatus': userData.loginStatus,
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,
     'isAtChatroom': userData.isAtChatroom,
-    isOneItem : isOneItem
+    isOneItem
 
   });
 };
