@@ -56,37 +56,3 @@ http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-var usernames = {};
-var rooms = ['room1', 'room2', 'room3'];
-
-io.sockets.on('connection', function(socket){
-  console.log('a user connected');
-
-  socket.on('addUser', function(username){
-    socket.username = username;
-    console.log(username + "has logged in");
-    socket.room = rooms[0];
-    usernames[username] = socket.username;
-    socket.join(socket.room);
-    updateClient(socket, username, socket.room);
-    updateChatRoom(socket, 'connected');
-    updateRoomList(socket, socket.room);
-
-  });
-
-
-  //send message
-  socket.on('sendChat', function(data){
-    console.log(socket.username + "sent a message");
-    io.sockets.in(socket.room).emit('updateChat', socket.username, data);
-  });
-
-  socket.on('disconnect', function(){
-    delete usernames[socket.username];
-    io.sockets.emit('updateUsers', usernames);
-
-    updateGlobal(socket, 'disconnected');
-    socket.leave(socket.room);
-  });
-
-});
