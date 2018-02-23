@@ -4,6 +4,7 @@ var allCategories = data.categories[0]['all'];
 data.currentUser.currentPageViewed = "Browse";
 data.allCategoryList.push(allCategories);
 var userData = require('../userData.json');
+var categoryList = require('../categoryListData.json');
 
 
 
