@@ -25,7 +25,6 @@ var filteredrRandom = require('./routes/filteredRandom');
 var profile = require('./routes/profile');
 var app = express();
 var server = http.createServer(app);
-var io = require('socket.io')(server);
 
 
 // all environments
@@ -49,11 +48,12 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
-
 app.get('/browse', browse.view);
-app.get('/preference', preference.view);
 app.get('/profile', profile.view);
 app.get('/profile_register', profile.register);
+app.get('/profile_login', profile.login);
+//app.get('/profile_incorrect_login', profile.incorrect_login);
+app.get('/profile_logout', profile.logout);
 
 
 // Example route
