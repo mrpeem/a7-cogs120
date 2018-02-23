@@ -2,20 +2,6 @@
 var data = require('../data.json');
 var loginStatus = data.currentUser.loginStatus;
 var currentPageViewed = data.currentUser.currentPageViewed;
-var userData = require('../userData.json');
-var popularCategoryList = require('../popularCategoryListData.json');
-var categoryList = require('../categoryListData.json');
-var dataType = require('../dataType.json');
-var data2 = require('../data2.json');
-
-var totalNumberOfItems = data2.length;
-
-//set current page = home
-userData.currentPageViewed = "home";
-var randomNumber = Math.floor(Math.random() * totalNumberOfItems);
-
-var todayItem = data2[randomNumber];
-var mediaHTML = '';
 
 //check current User status
 
