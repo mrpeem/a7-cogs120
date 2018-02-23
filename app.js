@@ -16,6 +16,7 @@ var info = require('./routes/info');
 var share = require('./routes/share');
 var show = require('./routes/show');
 var external = require('./routes/external');
+var userInfo = require('./routes/userInfo');
 
 var preference = require('./routes/preference');
 var profile = require('./routes/profile');
