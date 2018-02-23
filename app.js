@@ -21,9 +21,11 @@ var browse = require('./routes/browse');
 var preference = require('./routes/preference');
 var filteredrRandom = require('./routes/filteredRandom');
 
+
 var profile = require('./routes/profile');
 var app = express();
 var server = http.createServer(app);
+var io = require('socket.io')(server);
 
 
 // all environments
