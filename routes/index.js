@@ -14,7 +14,7 @@ var totalNumberOfItems = data2.length;
 userData.currentPageViewed = "home";
 var randomNumber = Math.floor(Math.random() * totalNumberOfItems);
 
-var todayItem = data[randomNumber];
+var todayItem = data2[randomNumber];
 var mediaHTML = '';
 var todayType = todayItem.type;
 
