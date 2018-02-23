@@ -1,42 +1,122 @@
-{{>header}}
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>APP</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+	<link href="/css/index.css" rel="stylesheet">
+	<link href="/css/profile.css" rel="stylesheet">
+
 </head>
+
 <body>
 
-  {{>searchbar}}
+	<div class="page-container">
 
-  <div class="page-container">
-    <div class="categories-container">
+		<div class="categories-container">
+			<div class="content-container">
+				<div class="content-Title">
+					All Categories
+				</div>
+				<div id="con-more">
+					<div class="content-More more">
+						Edit
+					</div>
+					<div class="content-More more">
+						Sort
+					</div>
 
-	  <div class="content-container">
-	    <div class="content-Title"> All Categories </div>
-
-	    <div id="con-more">
-	      <div class="content-More more">   </div>
-
-	      <!-- HIDE SORT FOR NOW <div class="content-More more"> Sort </div>-->
-	    </div>
-	  </div>
-
-	  <div class="categories-button">
-	  	{{#each categoryList}}
-	  	  <a href="/app/{{id}}">
-		    <div id="{{id}}" class="categories">
-			  {{title}}
+				</div>
 			</div>
-		  </a>
-		{{/each}}
-	  </div>
+			<div class="categories-button">
+
+				{{#each allCategoryList}}
+				{{#each this}}
+					<a href="/play/{{id}}">
+
+						<div id="{{id}}" class="categories">
+							{{title}}
+						</div>
+
+					</a>
+				{{/each}}
+				{{/each}}
+			</div>
+
+		</div>
+
+    	<div class="nav-cover"></div>
+
+    	<!-- SPACE FOR POPUP -->
+		<div id="profile_popup" class="modal"> </div>
+
+
+		<!-- BOTTOM NAVIGATION BAR -->
+		<div class="nav-container">
+
+			<!-- Home -->
+			<a href="/">
+				<div class="home nav-divider">
+					<div class="nav-images">
+						<img src="/images/icons/home-100.png" alt="home button">
+					</div>
+					<div class="nav-title">
+						Home
+					</div>
+				</div>
+			</a>
+
+			<!-- Browse -->
+			<a href="/browse">
+				<div class="browse nav-divider">
+					<div class="nav-images">
+						<img src="/images/icons/browse-100.png" alt="browse button">
+					</div>
+					<div class="nav-title">
+						Browse
+					</div>
+				</div>
+			</a>
+
+			<!-- Profile -->
+		    <a class="profile" onclick="checkLoginStatus( {{currentUser.loginStatus}} )" >
+		    	<div class="profile nav-divider">
+					<div class="nav-images">
+						<img src="/images/icons/profile-100.png" alt="profile button">
+					</div>
+					<div class="nav-title">
+						Profile
+					</div>
+				</div>
+			</a>
+
+			<!-- Search -->
+			<a href="/">
+				<div class="search">
+					<div class="nav-images">
+						<img src="/images/icons/search-100.png" alt="search button">
+					</div>
+					<div class="nav-title">
+						Search
+					</div>
+				</div>
+			</a>
+		</div>
+
+
+
 
 	</div>
-  </div>
 
-  <!-- SPACE FOR POPUP -->
-  <div id="profile_popup" class="modal"> </div>
+	<script src="/js/jquery-1.11.0.js"></script>
+	<script src="/js/bootstrap.js"></script>
+	<script src="/js/profile.js"></script>
 
-  <!-- BOTTOM NAVIGATION BAR -->
-  {{>navigation}}
 
-  {{>script}}
 </body>
 
 </html>

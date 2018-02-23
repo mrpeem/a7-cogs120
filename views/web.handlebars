@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APP</title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+  <link rel="stylesheet" href="/css/web.css">
+  <link href="/css/profile.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="pageTitle-container">
+        <div class="page-back">
+          <a href="/play/{{categoryTitle}}/{{itemId}}/info"> &lt; Back  </a>
+        </div>
+      <div class="page-title">
+        {{web}}
+      </div>
+
+
+      <div class="page-filter">
+        Save
+      </div>
+
+
+    </div>
+
+    <div class="pageContent-container">
+      <iframe src="https://www.californiabeaches.com/beach/la-jolla-shores-beach" width="100%" height="800"></iframe>
+
+
+    </div>
+
+    <!-- SPACE FOR POPUP -->
+    <div id="profile_popup" class="modal"> </div>
+
+
+    <!-- BOTTOM NAVIGATION BAR -->
+    <div class="nav-container">
+
+      <!-- Home -->
+      <a href="/">
+        <div class="home nav-divider">
+          <div class="nav-images">
+            <img src="/images/icons/home-100.png" alt="home button">
+          </div>
+          <div class="nav-title">
+            Home
+          </div>
+        </div>
+      </a>
+
+      <!-- Browse -->
+      <a href="/browse">
+        <div class="browse nav-divider">
+          <div class="nav-images">
+            <img src="/images/icons/browse-100.png" alt="browse button">
+          </div>
+          <div class="nav-title">
+            Browse
+          </div>
+        </div>
+      </a>
+
+      <!-- Profile -->
+        <a class="profile" onclick="checkLoginStatus( {{currentUser.loginStatus}} )" >    
+          <div class="profile nav-divider">
+          <div class="nav-images">
+            <img src="/images/icons/profile-100.png" alt="profile button">
+          </div>
+          <div class="nav-title">
+            Profile
+          </div>
+        </div>
+      </a>
+
+      <!-- Search -->
+      <a href="/search">
+        <div class="search">
+          <div class="nav-images">
+            <img src="/images/icons/search-100.png" alt="search button">
+          </div>
+          <div class="nav-title">
+            Search
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+    
+
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="/js/play.js"></script>
+  <script src="/js/jquery-1.11.0.js"></script>
+  <script src="/js/bootstrap.js"></script>
+  <script src="/js/profile.js"></script>
+  
+</body>
+
+</html>

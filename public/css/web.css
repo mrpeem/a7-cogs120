@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.page-container {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+.pageTitle-container{
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "Back Title Filter";
+  padding-top: 1rem;
+  background-color: #DFDFDF;
+  position:fixed;
+  width: 100%;
+}
+
+.page-title{
+  font-size: 2rem;
+  grid-area: Title;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-back, .page-filter{
+  margin: 1rem;
+  font-size: 1.1rem;
+  color: red;
+}
+
+.page-filter{
+  text-align: right;
+}
+
+
+.nav-container {
+  background-color: #DFDFDF;
+  position: fixed;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "Home Brower Profile Search";
+  bottom: 0;
+  text-align: center;
+}
+
+.nav-images{
+  padding-top: 1rem;
+}
+
+.nav-images img {
+  width:2rem;
+}
+
+.nav-title {
+  font-size: 1rem;
+}
+
+.nav-divider{
+  border-right: 1px solid #efefef;
+
+}
+
+.pageContent-container{
+  margin-top: 4.5rem;
+}

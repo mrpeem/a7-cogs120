@@ -1,95 +1,56 @@
+<!doctype html>
+
 <div class="modal-content">
     <!-- Header -->
     <div class="modal-header">
-
-        <h4 class="modal-title" id="myModalLabel">LOGO<button style="font-size:2rem;" type="button" class="close" data-dismiss="modal" aria-hidden="true"> X </button></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> X </button>
+        <h4 class="modal-title" id="myModalLabel">Login/Registration</h4>
     </div>
-
+    
     <div class="modal-body">
         <div class="row">
             <div class="col-lg-11">
                 <!-- Nav tabs -->
-                <ul class="nav nav-tabs" id="nav-tabs">
-                    <li id="login-tab" class="active"><a href="#Login" data-toggle="tab">Login</a></li>
-                    <li id="signup-tab"><a href="#Registration" data-toggle="tab">Signup</a></li>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+                    <li><a href="#Registration" data-toggle="tab">Registration</a></li>
                 </ul>
                 <!-- Tab panes -->
-                <div class="tab-content" id="tab-content">
-
+                <div class="tab-content">
+                    
                     <!-- Login form -->
                     <div class="tab-pane active" id="Login">
-                        <form role="form" class="form-horizontal" method="get" action="/profile_login">
-
-                            <!-- Email -->
+                        <form role="form" class="form-horizontal">
+                           
                             <div class="form-group">
-                              <div class="row">
-                                <div id="email-container" class="col-sm-12 ">
-                                    <input style="height: 2rem; margin-bottom:0; margin-top:1rem;" type="email" class="form-control" id="email1" placeholder="Email" name="email1" />
+                                <label for="email" class="col-sm-2 control-label">
+                                    Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="email1" placeholder="Email" />
                                 </div>
-                              </div>
                             </div>
 
                             <!-- Password -->
                             <div class="form-group">
-                              <div class="row">
-                                <div id="password-container" class="col-sm-12">
-                                    <input style="height: 2rem; margin-bottom:0;" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="exampleInputPassword1" />
+                                <label for="exampleInputPassword1" class="col-sm-2 control-label"> Password </label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Password" />
                                 </div>
-                              </div>
                             </div>
 
-                            <!-- Name (hidden) -->
-                            <div class="form-group" style="display:none">
-                                    <input type="text" class="form-control" id="fb_gg_name" name="fb_gg_name"/>
-                            </div>
-
-                            <!-- Image (hidden) -->
-                            <div class="form-group" style="display:none">
-                                    <input type="text" class="form-control" id="fb_gg_image" name="fb_gg_image"/>
-                            </div>
-
-                            <!-- Username (hidden) -->
-                            <div class="form-group" style="display:none">
-                                    <input type="text" class="form-control" id="fb_gg_username" name="fb_gg_username"/>
-                            </div>
-
-
-                            <!-- Forgot password -->
-                            <div class="form-group">
-                              <a id="forgotp" href="">Forgot password?</a>
-                            </div>
-
-                            <!-- Submit button -->
+                            <!-- Buttons -->
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <input type="submit" id="login-btn" type="button" class="btn btn-primary btn-sm" value="Login" />
-                                </div>
-                            </div>
-
-
-                            <hr id="hr">
-
-
-                            <div class="or">
-                                <span id="or-span">OR</span>
-                            </div>
-
-                            <!-- Login with Facebook -->
-                            <div class="row">
-                                <div class="col-sm-12">
-
-                                    <!-- Facebook submit button -->
-                                    <input id="flogin-btn" type="button" class="btn btn-primary btn-sm" value="Login with Facebook" data-target="#login-btn" onclick="checkLoginState();"/>
+                                <div class="col-sm-2"> </div>
+                                <div class="col-sm-10">
+                    
+                                    <!-- Submit button -->
+                                    <input type="button" class="btn btn-primary btn-sm" value="Submit" onclick="window.location.href='/preference'" />
+                                    
+                                    <!-- Forgot password -->
+                                    <a href="">Forgot password?</a>
 
                                 </div>
                             </div>
-
-                            <!-- Login with Google 
-                            <div class="row" id="customBtn1">
-                                <div class="col-sm-12">
-                                    <input id="glogin-btn"type="button" class="btn btn-primary btn-sm" value="Login with Google">
-                                </div>
-                            </div> -->
 
                         </form>
                     </div>
@@ -97,32 +58,22 @@
                     <!-- Registration form -->
                     <div class="tab-pane" id="Registration">
                         <form id="addFriendForm" role="form" method="get" action="/profile_register">
-
-                          <!-- Email -->
-                          <div class="form-group">
-                            <input type="email" class="form-control signup-input" id="email" placeholder="Email" name="email">
-                          </div>
-
-                          <!-- Name -->
-                             <div class="form-group">
-                              <input type="text" class="form-control signup-input" id="name" placeholder="Fullname" name="name">
-                            </div>
-
-                            <!-- Username -->
                             <div class="form-group">
-                              <input type="text" class="form-control signup-input" id="username" placeholder="Username" name="username">
+                              <label for="name">Name:</label>
+                              <input type="text" class="form-control" id="name" placeholder="Name" name="name">
                             </div>
 
-                            <!-- Password -->
                             <div class="form-group">
-                              <input type="password" class="form-control signup-input" id="password" placeholder="Password" name="password">
+                              <label for="email">Email:</label>
+                              <input type="email" class="form-control" id="email" placeholder="Email" name="email">
                             </div>
 
-                            <!-- Sign-up button -->
-                            <div id="signup-btn" class="form-group">
-                              <input type="submit" id="submitBtn" class="btn btn-default signup-input" value="Sign Up" ></input>
+                            <div class="form-group">
+                              <label for="password">Password:</label>
+                              <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                             </div>
 
+                            <input type="submit" id="submitBtn" class="btn btn-default" value="Save & Continue"></input>
                         </form>
 
 
@@ -131,8 +82,8 @@
                 </div>
 
             </div>
-
+            
         </div>
     </div>
 </div>
-
+</html>

@@ -1,0 +1,128 @@
+.chatroom-container{
+  margin: 2rem 1rem 0 1rem;
+  height: 5rem;
+}
+
+.chatroom-btns-layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "Exit Enter";
+}
+
+
+.chatroom-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #dfdfdf;
+
+}
+
+.chatroom-btns-last {
+  border-left:1px solid #efefef;
+
+}
+
+
+.displayNone {
+  display: none;
+}
+
+.chatroom-btns-2{
+  font-size: 1rem;
+  height: 2rem;
+}
+
+
+.nav-share{
+  position: fixed;
+  bottom: 4.5rem;
+  height: 5rem;
+  width: 100%;
+}
+
+.nav-share-2{
+  position: fixed;
+  bottom: 6.5rem;
+  height: 3rem;
+  width: 100%;
+}
+
+.chat-view{
+  position: fixed;
+  bottom: -5rem;
+  width: 100%;
+  height: auto;
+}
+
+.nav-cover-top {
+  margin-top: 5rem;
+  height: 1rem;
+}
+
+@keyframes expanding {
+  0% {
+    bottom: 6.5rem;
+  }
+  100% {
+    bottom: 30.5rem;
+  }
+}
+@keyframes shrinking {
+  0% {
+    bottom: 30.5rem;
+  }
+  100% {
+    bottom: 6.5rem;
+  }
+}
+
+@keyframes web-expanding {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 500px;
+  }
+}
+
+@keyframes web-shrinking {
+  0% {
+    height: 500px;
+  }
+  100% {
+    height: auto;
+  }
+}
+
+
+.ani-expand {
+  animation-name: expanding;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.ani-shrink {
+  animation-name: shrinking;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.ani-expand-web {
+  animation-name: web-expanding;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.ani-shrink-web {
+  animation-name: web-shrinking;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}

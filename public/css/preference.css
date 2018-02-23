@@ -1,35 +1,95 @@
-.nav-up-cover{
-  height:5rem;
-  width:100%;
+.page-container {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+.preference-Title{
+  border: none;
+  margin-left: 20px;
+  margin-right: 100px;
+}
+.nav-container {
+  background-color: #DFDFDF;
+  position: fixed;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "Home Brower Profile Search";
+  bottom: 0;
+  text-align: center;
 }
 
-.preference-Title div{
-  font-size: 1.5rem;
-  text-align: center;
-  font-weight: bold;
-  margin: 1rem 0;
+.nav-images{
+  padding-top: 1rem;
+}
+
+.nav-images img {
+  width:2rem;
+}
+
+.nav-title {
+  font-size: 1rem;
+}
+
+.nav-divider{
+  border-right: 1px solid #efefef;
+
+}
+.categories-button{
+  border: 1rem;
+  font-size: 2rem;
+  margin-left: 50px;
+}
+
+.page-back{
+  margin: 10px;
+}
+
+
+}
+
+.preference-confirm {
+  display: grid;
+  grid-template-columns: 1fr, 1fr, 1fr;
+  grid-column-gap: 1em;
+  }
+.preference-confirm > div{   
+  font-size: 2rem;
+  color: white;
+  border-style: solid;
+  border-color: rgb(0,0,255);
+  padding:4px;
+  border-radius: 5px;
+  background-color: rgb(0,0,225);
+}
+.content-skip{
+  margin-right: 20px;
 }
 
 .preference-Search{
-  width: 95%;
-  margin: auto;
-  margin-bottom: 1rem;
+  margin-left: 50px;
+  margin-right: 20px;
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+
+
 }
 
-.search-50 img{
-  height: 2rem;
-  width: 2rem;
-}
-
-.categories-button form{
-  height: 3rem;
-  margin: 0.5rem 0;
-}
-
-.categories-button form label{
+input[type=checkbox] + label{
+  display:block;
   font-size: 2rem;
+  margin: 20px;
+  border-top-style: solid;
+
 }
 
-.nav-cover2{
-  height: 5rem;
+
+
+       
+input[type=checkbox]:checked + label:before{
+  background-color: grey;
+  border-color: grey;
+
 }
