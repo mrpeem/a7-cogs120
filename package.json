@@ -12,14 +12,15 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "cool-ascii-faces": "^1.3.4",
     "express": "3.x",
     "express3-handlebars": "*",
+    "handlebars": "4.0.0",
     "mongodb": "*",
     "mongoose": "*",
+    "semver": "4.3.2",
     "socket.io": "^2.0.4",
-    "uglify-js": "2.6.0",
-    "handlebars": "4.0.0",
-    "semver": "4.3.2"
+    "uglify-js": "2.6.0"
   },
   "engines": {
     "node": "0.10.x"
