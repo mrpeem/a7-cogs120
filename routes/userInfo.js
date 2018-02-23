@@ -74,9 +74,9 @@ exports.view = function(req, res) {
     'itemID': categoryListUser[index - 1].id,
     'isScreenShared': userData.isScreenShared,
     'userIdNumber': userData.userIdNumber,
-    categoryList,
+    categoryList : categoryList, 
     'loginStatus': userData.loginStatus,
-    needLogin
+    needLogin : needLogin
   });
 };
 

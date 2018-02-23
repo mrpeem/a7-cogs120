@@ -84,6 +84,7 @@ exports.view = function(req, res) {
     'mediaHTML': mediaHTML,
     'categoryTitle': todayCategoryTitle,
     'itemId': todayItemId,
+     categoryList : categoryList,
      userData : userData
   });
 };
